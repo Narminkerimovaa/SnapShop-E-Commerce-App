@@ -1,0 +1,115 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fullWidth {
+  width: 100%;
+  flex: 1;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1D3557;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  color: #1D3557;
+  background: #fff;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #FF6B35;
+}
+
+/* Sizes */
+.sm {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.md {
+  padding: 11px 14px;
+  font-size: 15px;
+}
+
+.lg {
+  padding: 14px 16px;
+  font-size: 16px;
+}
+
+/* Icon padding */
+.hasIconLeft {
+  padding-left: 40px;
+}
+
+.hasIconRight {
+  padding-right: 40px;
+}
+
+.iconLeft,
+.iconRight {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: #94a3b8;
+  font-size: 16px;
+  justify-content: center;
+  width: 20px;
+  pointer-events: none;
+}
+
+.iconLeft {
+  left: 12px;
+}
+
+.iconRight {
+  right: 12px;
+}
+
+/* States */
+.errorInput {
+  border-color: #ef4444;
+}
+
+.errorInput:focus {
+  border-color: #ef4444;
+}
+
+.disabled {
+  background: #f8fafc;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.error {
+  font-size: 12px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.hint {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.input:hover:not(:focus):not(.disabled):not(.errorInput) {
+  border-color: #cbd5e1;
+}
