@@ -1,4 +1,5 @@
 import styles from './Spinner.module.css';
+import PropTypes from 'prop-types';
 
 /**
  * Spinner — yükləmə indikatoru
@@ -45,6 +46,14 @@ const Spinner = ({
       {spinnerEl}
     </div>
   );
+};
+
+Spinner.propTypes = {
+  size:     PropTypes.oneOf(['sm', 'md', 'lg']),
+  color:    PropTypes.oneOf(['primary', 'white', 'gray']),
+  fullPage: PropTypes.bool,
+  overlay:  PropTypes.bool,
+  label:    PropTypes.string,
 };
 
 export default Spinner;
