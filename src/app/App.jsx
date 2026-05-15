@@ -1,11 +1,10 @@
+import { AuthRouter } from "./routes/auth/AuthRouter";
+import { ProtectedRouter } from "./routes/protected/ProtectedRouter";
 
-function App() {
+const App = () => {
+  const user = localStorage.getItem('user');
 
-  return (
-    <>
-    hi
-    </>
-  )
-}
+  return user ? <ProtectedRouter /> : <AuthRouter />;
+};
 
-export default App
+export default App;

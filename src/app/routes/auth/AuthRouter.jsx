@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Spinner from '@/shared/components/Spinner';
-import Layout from '@/shared/components/Layout';
+import Spinner from '@/shared/components/Spinner/Spinner';
+import Layout from '@/shared/components/Layout/Layout';
 
 const HomePage = lazy(() => import('@/features/products/pages/HomePage'));
 const ProductDetailPage = lazy(() => import('@/features/products/pages/ProductDetailPage'));
