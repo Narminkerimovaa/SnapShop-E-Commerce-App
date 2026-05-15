@@ -1,9 +1,9 @@
-import Spinner from "@/shared/components/Spinner/Spinner"
+import Button from "@/shared/components/Button"
 
 function HomePage() {
   return (
     <div>
-      <Spinner/>
+      <Button variant="danger" size="lg">Sil</Button>
     </div>
   )
 }
