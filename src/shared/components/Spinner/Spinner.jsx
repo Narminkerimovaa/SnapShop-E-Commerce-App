@@ -16,34 +16,23 @@ const Spinner = ({
   fullPage = false,
   overlay = false,
   label = 'Loading...',
+  className = '', 
+  ...rest
 }) => {
-  const spinnerEl = (
-    <span
-      className={`${styles.spinner} ${styles[size]} ${styles[color]}`}
-      role="status"
-      aria-label={label}
-    />
-  );
+  const containerClasses = [
+    fullPage ? styles.fullPage : '',
+    overlay ? styles.overlay : '',
+    !fullPage && !overlay ? styles.wrapper : '',
+    className
+  ].filter(Boolean).join(' ');
 
-  if (fullPage) {
-    return (
-      <div className={styles.fullPage}>
-        {spinnerEl}
-      </div>
-    );
-  }
-
-  if (overlay) {
-    return (
-      <div className={styles.overlay}>
-        {spinnerEl}
-      </div>
-    );
-  }
-
-  return (
-    <div className={styles.wrapper}>
-      {spinnerEl}
+ return (
+    <div className={containerClasses} {...rest}>
+      <span
+        className={`${styles.spinner} ${styles[size]} ${styles[color]}`}
+        role="status"
+        aria-label={label}
+      />
     </div>
   );
 };
@@ -54,6 +43,7 @@ Spinner.propTypes = {
   fullPage: PropTypes.bool,
   overlay:  PropTypes.bool,
   label:    PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Spinner;
