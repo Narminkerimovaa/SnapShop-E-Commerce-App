@@ -1,0 +1,87 @@
+/* ============================================================
+   Spinner.module.css
+   ============================================================ */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Base wrapper --- */
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* fullPage — ekranın mərkəzində göstər */
+.fullPage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-overlay);
+  z-index: var(--z-overlay);
+}
+
+/* overlay — parent-in üstündə, fixed yox relative */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: var(--z-raised);
+  border-radius: inherit;
+}
+
+/* --- Spinner dairəsi --- */
+.spinner {
+  border-radius: var(--radius-full);
+  border-style: solid;
+  border-color: transparent;
+  animation: spin 700ms linear infinite;
+  flex-shrink: 0;
+}
+
+/* --- Size variants --- */
+.sm {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.md {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+.lg {
+  width: 36px;
+  height: 36px;
+  border-width: 3px;
+}
+
+/* --- Color variants --- */
+.primary {
+  border-top-color: var(--color-primary);
+  border-right-color: var(--color-primary-light);
+  border-bottom-color: var(--color-primary-light);
+  border-left-color: var(--color-primary-light);
+}
+
+.white {
+  border-top-color: var(--color-white);
+  border-right-color: rgba(255, 255, 255, 0.3);
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.gray {
+  border-top-color: var(--color-gray-500);
+  border-right-color: var(--color-gray-200);
+  border-bottom-color: var(--color-gray-200);
+  border-left-color: var(--color-gray-200);
+}

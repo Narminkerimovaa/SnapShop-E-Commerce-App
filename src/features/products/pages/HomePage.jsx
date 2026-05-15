@@ -1,7 +1,10 @@
+import Spinner from "@/shared/components/Spinner/Spinner"
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+      <Spinner/>
+    </div>
   )
 }
 

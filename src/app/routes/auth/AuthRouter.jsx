@@ -12,7 +12,7 @@ const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 export const AuthRouter = () => {
   return (
     <Layout>
-      <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner fullPage />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />

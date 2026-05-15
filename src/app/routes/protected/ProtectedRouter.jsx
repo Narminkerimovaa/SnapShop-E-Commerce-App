@@ -11,7 +11,7 @@ const FavoritesPage = lazy(() => import('@/features/favorites/pages/FavoritesPag
 export const ProtectedRouter = () => {
   return (
     <Layout>
-      <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner fullPage />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
