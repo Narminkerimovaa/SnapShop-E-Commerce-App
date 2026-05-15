@@ -1,19 +1,26 @@
-import LoginPage from "@/features/auth/pages/LoginPage";
-import RegisterPage from "@/features/auth/pages/RegisterPage";
-import HomePage from "@/features/products/pages/HomePage";
-import ProductDetailPage from "@/features/products/pages/ProductDetailPage";
-import NotFoundPage from "@/pages/NotFoundPage";
-import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Spinner from '@/shared/components/Spinner';
+import Layout from '@/shared/components/Layout';
 
+const HomePage = lazy(() => import('@/features/products/pages/HomePage'));
+const ProductDetailPage = lazy(() => import('@/features/products/pages/ProductDetailPage'));
+const LoginPage = lazy(() => import('@/features/auth/pages/LoginPage'));
+const RegisterPage = lazy(() => import('@/features/auth/pages/RegisterPage'));
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 export const AuthRouter = () => {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/product/:id" element={<ProductDetailPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <Layout>
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 };
