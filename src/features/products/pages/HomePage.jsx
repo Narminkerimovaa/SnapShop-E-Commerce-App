@@ -1,7 +1,6 @@
-import Skeleton from "@/shared/components/Skeleton";
 
 function HomePage() {
-  return <Skeleton variant="card" />;
+  return <h1>Home page</h1>;
 }
 
 export default HomePage;
