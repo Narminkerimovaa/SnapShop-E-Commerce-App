@@ -1,24 +1,7 @@
-import Dropdown from "@/shared/components/Dropdown";
-import { useState } from "react";
+import Skeleton from "@/shared/components/Skeleton";
 
 function HomePage() {
-  const sortOptions = [
-    { label: "Ucuzdan bahaya", value: "price_asc" },
-    { label: "Bahadan ucuza", value: "price_desc" },
-  ];
-  const [sort, setSort] = useState(null);
-  return (
-    <Dropdown
-      label="Sırala"
-      options={sortOptions} 
-      value={sort}
-      onChange={setSort}
-      fullWidth={true}
-      placeholder='Seçin'
-      />
-      
-      
-  );
+  return <Skeleton variant="card" />;
 }
 
 export default HomePage;
