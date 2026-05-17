@@ -9,7 +9,6 @@ import { FaApple } from "react-icons/fa";
 import { BsGooglePlay } from "react-icons/bs";
 
 
-
 const SOCIAL_LINKS = [
   { icon: <FaInstagram />, label: 'Instagram', href: '#' },
   { icon: <IoLogoTiktok />, label: 'TikTok',    href: '#' },

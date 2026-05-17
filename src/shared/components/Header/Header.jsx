@@ -10,6 +10,11 @@ import { useBasket } from "@/shared/providers/basket/useBasket";
 import { useFavorites } from "@/shared/providers/favorites/useFavorites";
 import { useSearch } from "@/shared/providers/search/useSearch";
 import Button from "../Button";
+import { IoSearch } from "react-icons/io5";
+import { CiHeart } from "react-icons/ci";
+import { SlBasket } from "react-icons/sl";
+import { CiUser } from "react-icons/ci";
+
 
 const LANGUAGES = [
   { label: "AZ", value: "az", icon: "🇦🇿" },
@@ -58,7 +63,7 @@ const Header = () => {
               placeholder="Məhsul, kateqoriya və ya brend axtar"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
-              iconLeft={<span>🔍</span>}
+              iconLeft={<span><IoSearch /></span>}
               fullWidth
               className={styles.searchInput}
             />
@@ -78,7 +83,7 @@ const Header = () => {
             ) : user ? (
               <Button variant="menuItem" className={styles.menuItem}>
                 <div className={styles.iconContainer}>
-                  <span className={styles.actionIcon}>👤</span>
+                  <span className={styles.actionIcon}><CiUser /></span>
                 </div>
                 <span className={styles.actionLabel}>{user.name}</span>
               </Button>
@@ -98,7 +103,9 @@ const Header = () => {
               onClick={() => handleProtectedNav("/favorites")}
             >
               <div className={styles.iconContainer}>
-                <span className={styles.actionIcon}>🤍</span>
+                <span className={styles.favIcon}><CiHeart /></span>
+                </div>
+                <span className={styles.actionLabel}>Sevimlilərim</span>
                 {favoriteCount > 0 && (
                   <span className={styles.badgeWrapper}>
                     <Badge variant="discount">
@@ -106,8 +113,6 @@ const Header = () => {
                     </Badge>
                   </span>
                 )}
-              </div>
-              <span className={styles.actionLabel}>Sevimlilərim</span>
             </Button>
 
             <Button
@@ -116,7 +121,9 @@ const Header = () => {
               onClick={() => handleProtectedNav("/basket")}
             >
               <div className={styles.iconContainer}>
-                <span className={styles.actionIcon}>🛒</span>
+                <span className={styles.actionIcon}><SlBasket /></span>
+                </div>
+                <span className={styles.actionLabel}>Səbətim</span>
                 {basketCount > 0 && (
                   <span className={styles.badgeWrapper}>
                     <Badge variant="discount">
@@ -124,8 +131,6 @@ const Header = () => {
                     </Badge>
                   </span>
                 )}
-              </div>
-              <span className={styles.actionLabel}>Səbətim</span>
             </Button>
           </div>
         </div>

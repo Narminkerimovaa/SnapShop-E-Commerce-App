@@ -61,7 +61,7 @@
 }
 
 /* ── Action buttons ── */
-.actionBtn {
+.menuItem {
   position: relative;
   display: flex;
   align-items: center;
@@ -76,15 +76,38 @@
   color: #1a1a1a;
   transition: background 0.2s ease;
   white-space: nowrap;
+  overflow: visible !important;
 }
 
-.actionBtn:hover {
+.menuItem:hover {
   background: #f5f5f5;
 }
 
 .actionIcon {
   font-size: 18px;
   line-height: 1;
+}
+
+.iconContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.actionIcon svg,
+.favIcon svg {
+  display: block;
+  width: 22px;  
+  height: 22px;
+}
+
+.favIcon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .actionLabel {
@@ -95,8 +118,10 @@
 
 .badgeWrapper {
   position: absolute;
-  top: 4px;
-  right: 0px;
+  top: 10px;
+  right: 5px;
+  transform: translate(50%, -50%); 
+  z-index: 10;
 }
 
 .badgeWrapper span {
