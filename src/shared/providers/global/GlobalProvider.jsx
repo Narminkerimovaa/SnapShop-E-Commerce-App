@@ -9,7 +9,7 @@ export const GlobalProvider = ({ children }) => {
   const [searchValue, setSearchValue] = useState('');
   const [activeCategory, setActiveCategory] = useState('');
 
-  const mockAuth = { user: { name: 'Aysel' } };
+  const mockAuth = { user: null };
   const mockBasket = { basket: [{ id: 1, qty: 3 }] };
   const mockFavorites = { favorites: [{ id: 1 }, { id: 2 }] };
   const mockSearch = { searchValue, setSearchValue, activeCategory, setActiveCategory };

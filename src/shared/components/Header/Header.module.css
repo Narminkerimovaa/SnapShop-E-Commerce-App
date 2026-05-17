@@ -51,7 +51,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
@@ -96,7 +96,7 @@
 .badgeWrapper {
   position: absolute;
   top: 4px;
-  right: 4px;
+  right: 0px;
 }
 
 .badgeWrapper span {
@@ -120,28 +120,6 @@
   display: none;
 }
 
-/* ── Kateqoriya düymələri ── */
-.categoryBtn {
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  padding: 12px 16px;
-  font-size: 13px;
-  font-weight: 400;
-  font-family: inherit;
-  color: #444;
-  white-space: nowrap;
-  transition: color 0.2s ease, border-color 0.2s ease;
-  text-transform: capitalize;
-}
 
-.categoryBtn:hover {
-  color: #FF6B35;
-}
 
-.categoryBtnActive {
-  color: #FF6B35;
-  border-bottom: 2px solid #FF6B35;
-  font-weight: 500;
-}
+

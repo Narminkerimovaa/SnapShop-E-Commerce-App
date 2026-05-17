@@ -24,6 +24,7 @@ const Button = ({
   disabled = false,
   loading = false,
   fullWidth = false,
+  active = false,
   iconLeft,
   iconRight,
   onClick,
@@ -37,6 +38,7 @@ const Button = ({
     styles.button,
     styles[variant],
     styles[size],
+    active ? styles.active : '',
     loading   ? styles.loading   : '',
     disabled  ? styles.disabled  : '',
     fullWidth ? styles.fullWidth : '',
@@ -74,7 +76,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-  variant:   PropTypes.oneOf(['primary', 'secondary', 'ghost', 'danger', 'text']),
+  variant:   PropTypes.oneOf(['primary', 'secondary', 'ghost', 'danger', 'text', 'nav', 'tab', 'menuItem']),
   size:      PropTypes.oneOf(['sm', 'md', 'lg']),
   type:      PropTypes.oneOf(['button', 'submit', 'reset']),
   disabled:  PropTypes.bool,
